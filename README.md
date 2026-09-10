@@ -73,50 +73,7 @@ Charts and visual indicators make complex risk information easier to understand.
 
 Allows monitoring of individual vulnerable locations and their current risk status.
 
----
 
-## 🏗️ System Architecture
-
-```text
-                    TerraShield AI
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │   User / Admin  │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │  Web Dashboard  │
-                 │   Next.js / v0  │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │   FastAPI API   │
-                 │     Backend     │
-                 └────────┬────────┘
-                          │
-              ┌───────────┼───────────┐
-              ▼           ▼           ▼
-         Rainfall      Terrain      Risk Data
-           Data          Data       / History
-              │           │           │
-              └───────────┼───────────┘
-                          ▼
-                 ┌─────────────────┐
-                 │  Risk Analysis  │
-                 │   + AI Engine   │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │ Risk Score &    │
-                 │ Early Warning   │
-                 └─────────────────┘
-```
-
----
 
 ## 🛠️ Technology Stack
 
@@ -150,83 +107,7 @@ Allows monitoring of individual vulnerable locations and their current risk stat
 
 ---
 
-## 📁 Project Structure
 
-```text
-terrashield-ai/
-│
-├── app/
-│   ├── page.tsx
-│   ├── layout.tsx
-│   └── ...
-│
-├── components/
-│   └── ...
-│
-├── public/
-│   └── ...
-│
-├── backend/
-│   ├── main.py
-│   ├── routes/
-│   └── ...
-│
-├── package.json
-├── README.md
-└── ...
-```
-
----
-
-## 🚀 Getting Started
-
-### Frontend
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Open:
-
-```text
-http://localhost:3000
-```
-
-### Backend
-
-Navigate to the backend directory:
-
-```bash
-cd backend
-```
-
-Activate the Python virtual environment and install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Start the FastAPI server:
-
-```bash
-uvicorn main:app --reload
-```
-
-Backend will run at:
-
-```text
-http://127.0.0.1:8000
-```
-
----
 
 ## 🎯 Target Users
 
