@@ -281,8 +281,3 @@ The current version focuses on demonstrating the core dashboard, risk monitoring
 
 ---
 
-## 👩‍💻 Developed By
-
-**Team TerraShield AI**
-
-Built for innovation, disaster preparedness, and safer communities. 🌍
