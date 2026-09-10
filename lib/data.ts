@@ -1,0 +1,202 @@
+import type { Alert, District, FieldReport } from './types'
+
+// Realistic demo/simulated baseline for Northeast India monsoon conditions.
+// Coordinates are stylized positions (0-100) approximating each state's
+// location on the SlopeGuard command map — not survey-grade geodata.
+export const initialDistricts: District[] = [
+  {
+    id: 'sikkim',
+    name: 'Mangan / North Sikkim',
+    state: 'Sikkim',
+    x: 11,
+    y: 26,
+    riskScore: 54,
+    rainfall: 88,
+    soilMoisture: 61,
+    slopeAngle: 38,
+    historicalLandslides: 42,
+    population: 43000,
+    vulnerableRoads: 7,
+    vulnerableVillages: 12,
+  },
+  {
+    id: 'arunachal',
+    name: 'Tawang / West Kameng',
+    state: 'Arunachal Pradesh',
+    x: 74,
+    y: 15,
+    riskScore: 61,
+    rainfall: 102,
+    soilMoisture: 66,
+    slopeAngle: 41,
+    historicalLandslides: 55,
+    population: 84000,
+    vulnerableRoads: 11,
+    vulnerableVillages: 19,
+  },
+  {
+    id: 'assam',
+    name: 'Dima Hasao',
+    state: 'Assam',
+    x: 45,
+    y: 49,
+    riskScore: 38,
+    rainfall: 64,
+    soilMoisture: 52,
+    slopeAngle: 24,
+    historicalLandslides: 28,
+    population: 214000,
+    vulnerableRoads: 9,
+    vulnerableVillages: 15,
+  },
+  {
+    id: 'nagaland',
+    name: 'Kohima Ridge',
+    state: 'Nagaland',
+    x: 79,
+    y: 45,
+    riskScore: 47,
+    rainfall: 71,
+    soilMoisture: 55,
+    slopeAngle: 33,
+    historicalLandslides: 31,
+    population: 99000,
+    vulnerableRoads: 6,
+    vulnerableVillages: 10,
+  },
+  {
+    id: 'meghalaya',
+    name: 'East Khasi Hills',
+    state: 'Meghalaya',
+    x: 33,
+    y: 63,
+    riskScore: 58,
+    rainfall: 96,
+    soilMoisture: 64,
+    slopeAngle: 29,
+    historicalLandslides: 47,
+    population: 826000,
+    vulnerableRoads: 8,
+    vulnerableVillages: 14,
+  },
+  {
+    id: 'manipur',
+    name: 'Noney / Tamenglong',
+    state: 'Manipur',
+    x: 76,
+    y: 66,
+    riskScore: 44,
+    rainfall: 69,
+    soilMoisture: 53,
+    slopeAngle: 31,
+    historicalLandslides: 36,
+    population: 47000,
+    vulnerableRoads: 5,
+    vulnerableVillages: 9,
+  },
+  {
+    id: 'mizoram',
+    name: 'Aizawl Hills',
+    state: 'Mizoram',
+    x: 60,
+    y: 83,
+    riskScore: 41,
+    rainfall: 67,
+    soilMoisture: 51,
+    slopeAngle: 35,
+    historicalLandslides: 33,
+    population: 293000,
+    vulnerableRoads: 7,
+    vulnerableVillages: 11,
+  },
+]
+
+export const initialAlerts: Alert[] = [
+  {
+    id: 'a1',
+    level: 'high',
+    location: 'Tawang / West Kameng, Arunachal Pradesh',
+    riskScore: 61,
+    cause: 'Sustained rainfall over saturated slopes on NH-13 corridor',
+    action: 'Pre-position response teams; issue traveller advisory',
+    time: Date.now() - 1000 * 60 * 34,
+  },
+  {
+    id: 'a2',
+    level: 'moderate',
+    location: 'East Khasi Hills, Meghalaya',
+    riskScore: 58,
+    cause: 'Soil moisture approaching saturation near Sohra',
+    action: 'Increase sensor polling; monitor slope displacement',
+    time: Date.now() - 1000 * 60 * 92,
+  },
+  {
+    id: 'a3',
+    level: 'moderate',
+    location: 'Mangan / North Sikkim',
+    riskScore: 54,
+    cause: 'Rising Teesta discharge with intermittent showers',
+    action: 'Advise caution on NH-10; ready evacuation routes',
+    time: Date.now() - 1000 * 60 * 148,
+  },
+]
+
+export const initialReports: FieldReport[] = [
+  {
+    id: 'r1',
+    type: 'Ground crack',
+    location: 'Sohra Road, East Khasi Hills',
+    severity: 'high',
+    description:
+      'Tension crack ~15m observed above the roadway, widening since morning rain.',
+    time: Date.now() - 1000 * 60 * 58,
+    x: 31,
+    y: 60,
+  },
+  {
+    id: 'r2',
+    type: 'Blocked road',
+    location: 'NH-10, near Rangpo, Sikkim',
+    severity: 'moderate',
+    description: 'Debris flow partially blocking one lane after overnight rain.',
+    time: Date.now() - 1000 * 60 * 176,
+    x: 13,
+    y: 29,
+  },
+]
+
+// Historical / analytics demo series
+export const rainfallVsRisk = [
+  { rainfall: 30, risk: 22 },
+  { rainfall: 45, risk: 31 },
+  { rainfall: 60, risk: 41 },
+  { rainfall: 75, risk: 52 },
+  { rainfall: 90, risk: 63 },
+  { rainfall: 105, risk: 74 },
+  { rainfall: 120, risk: 83 },
+  { rainfall: 140, risk: 91 },
+]
+
+export const sevenDayTrend = [
+  { day: 'Mon', risk: 42 },
+  { day: 'Tue', risk: 48 },
+  { day: 'Wed', risk: 45 },
+  { day: 'Thu', risk: 53 },
+  { day: 'Fri', risk: 58 },
+  { day: 'Sat', risk: 55 },
+  { day: 'Sun', risk: 61 },
+]
+
+export const incidentTypes = [
+  { type: 'Debris flow', count: 38 },
+  { type: 'Rockfall', count: 27 },
+  { type: 'Slump', count: 19 },
+  { type: 'Road cut failure', count: 24 },
+  { type: 'Earth flow', count: 14 },
+]
+
+export const roadConnectivity = [
+  { status: 'Open', value: 62 },
+  { status: 'Restricted', value: 26 },
+  { status: 'Blocked', value: 12 },
+]
